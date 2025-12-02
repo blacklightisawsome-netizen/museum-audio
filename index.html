@@ -177,7 +177,6 @@
             height: 8px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 4px;
-            cursor: pointer;
             position: relative;
             overflow: hidden;
         }
@@ -351,12 +350,6 @@
         audio.addEventListener('ended', function() {
             updatePlayButton(false);
             progressBar.style.width = '0%';
-        });
-
-        progressContainer.addEventListener('click', function(e) {
-            const rect = this.getBoundingClientRect();
-            const pos = (e.clientX - rect.left) / rect.width;
-            audio.currentTime = pos * audio.duration;
         });
 
         function formatTime(seconds) {
